@@ -14,7 +14,7 @@ body, html{
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: scale(calc(100vw/1920)) translate(-50%, -50%);
+    transform: scale(calc(100vw/1920));
 }
 
 
