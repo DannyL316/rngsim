@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RNG Simulator</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <link rel="icon" type="png/img" href="favicon.png">
+    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+    <script src="main.js"></script>
+</head>
+<body>
+
+    <audio id="audio" src="bgmusic2.mp3"></audio>
+
+    <img id="logo" draggable="false" src="favicon.png">
+    <img id="logo2" draggable="false" src="favicon.png">
+
+    <div class="w-[1920px] h-[1080px] relative  overflow-hidden">
+        <div class="h-60 left-[610px] top-[265px] absolute">
+          <div class="w-[700px] h-[100px] left-0 top-[140px] absolute bg-[#1c1c1c] rounded-[15px] border-8 border-neutral-700"></div>
+          <div class="left-[123px] top-0 absolute text-center text-[#efc82f] text-[75px] font-bold font-['Albert Sans'] [text-shadow:_0px_0px_27px_rgb(239_201_48_/_1.00)]">LEGENDARY</div>
+        </div>
+        <div class="w-[400px] h-[1000px] left-[1520px] top-[40px] absolute">
+          <div class="w-[400px] h-[1000px] left-0 top-0 absolute bg-[#0f0f0f] rounded-tl-[20px] rounded-bl-[20px] border-8 border-neutral-700"></div>
+          <div class="w-48 h-[70px] left-[203px] top-[5px] absolute">
+            <div class="w-48 h-[70px] left-0 top-0 absolute bg-black rounded-[15px]"></div>
+            <div class="w-48 h-[70px] left-0 top-0 absolute text-center text-white text-3xl font-bold font-['Albert Sans']">Inventory</div>
+          </div>
+          <div class="w-48 h-[70px] left-[5px] top-[5px] absolute">
+            <div class="w-48 h-[70px] left-0 top-0 absolute bg-black rounded-[15px]"></div>
+            <div class="w-48 h-[70px] left-0 top-0 absolute text-center text-white text-3xl font-bold font-['Albert Sans']">Rarities</div>
+          </div>
+          <div data-svg-wrapper class="left-[15px] top-[92px] absolute">
+          <svg width="382" height="12" viewBox="0 0 382 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M6 6H376" stroke="#404040" stroke-width="11" stroke-linecap="round"/>
+          </svg>
+          </div>
+          <div class="w-[370px] h-[104px] left-[15px] top-[110px] absolute">
+            <div class="w-[370px] h-[82px] left-0 top-[22px] absolute bg-[#1c1c1c] rounded-[5px]"></div>
+            <div class="w-[370px] h-[82px] left-0 top-0 absolute text-center text-[#595959] text-3xl font-bold font-['Albert Sans'] [text-shadow:_0px_4px_0px_rgb(0_0_0_/_0.50)]">Common</div>
+            <div class="w-20 h-[45px] left-[145px] top-[54px] absolute text-center text-white text-lg font-bold font-['Albert Sans']">[38%]</div>
+          </div>
+          <div class="w-[370px] h-[104px] left-[15px] top-[196px] absolute">
+            <div class="w-[370px] h-[82px] left-0 top-[22px] absolute bg-[#1bbc59] rounded-[5px]"></div>
+            <div class="w-[370px] h-[82px] left-0 top-0 absolute text-center text-[#63e796] text-3xl font-bold font-['Albert Sans'] [text-shadow:_0px_4px_0px_rgb(0_0_0_/_0.50)]">Uncommon</div>
+            <div class="w-20 h-[45px] left-[145px] top-[54px] absolute text-center text-white text-lg font-bold font-['Albert Sans']">[22%]</div>
+          </div>
+          <div class="w-[370px] h-[104px] left-[15px] top-[282px] absolute">
+            <div class="w-[370px] h-[82px] left-0 top-[22px] absolute bg-[#205fbe] rounded-[5px]"></div>
+            <div class="w-[370px] h-[82px] left-0 top-0 absolute text-center text-[#6699e4] text-3xl font-bold font-['Albert Sans'] [text-shadow:_0px_4px_0px_rgb(0_0_0_/_0.50)]">Rare</div>
+            <div class="w-20 h-[45px] left-[145px] top-[54px] absolute text-center text-white text-lg font-bold font-['Albert Sans']">[13%]</div>
+          </div>
+          <div class="w-[370px] h-[104px] left-[15px] top-[368px] absolute">
+            <div class="w-[370px] h-[82px] left-0 top-[22px] absolute bg-[#7720c3] rounded-[5px]"></div>
+            <div class="w-[370px] h-[82px] left-0 top-0 absolute text-center text-[#aa65e5] text-3xl font-bold font-['Albert Sans'] [text-shadow:_0px_4px_0px_rgb(0_0_0_/_0.50)]">Epic</div>
+            <div class="w-20 h-[45px] left-[145px] top-[54px] absolute text-center text-white text-lg font-bold font-['Albert Sans']">[9%]</div>
+          </div>
+          <div class="w-[370px] h-[104px] left-[15px] top-[454px] absolute">
+            <div class="w-[370px] h-[82px] left-0 top-[22px] absolute bg-[#d58910] rounded-[5px]"></div>
+            <div class="w-[370px] h-[82px] left-0 top-0 absolute text-center text-[#f2b759] text-3xl font-bold font-['Albert Sans'] [text-shadow:_0px_4px_0px_rgb(0_0_0_/_0.50)]">Legendary</div>
+            <div class="w-20 h-[45px] left-[145px] top-[54px] absolute text-center text-white text-lg font-bold font-['Albert Sans']">[8%]</div>
+          </div>
+          <div class="w-[370px] h-[104px] left-[15px] top-[540px] absolute">
+            <div class="w-[370px] h-[82px] left-0 top-[22px] absolute bg-[#b91818] rounded-[5px]"></div>
+            <div class="w-[370px] h-[82px] left-0 top-0 absolute text-center text-[#e74f4f] text-3xl font-bold font-['Albert Sans'] [text-shadow:_0px_4px_0px_rgb(0_0_0_/_0.50)]">Mythic</div>
+            <div class="w-20 h-[45px] left-[145px] top-[54px] absolute text-center text-white text-lg font-bold font-['Albert Sans']">[5%]</div>
+          </div>
+          <div class="w-[370px] h-[104px] left-[15px] top-[626px] absolute">
+            <div class="w-[370px] h-[82px] left-0 top-[22px] absolute bg-[#514130] rounded-[5px]"></div>
+            <div class="w-[370px] h-[82px] left-0 top-0 absolute text-center text-[#8f7456] text-3xl font-bold font-['Albert Sans'] [text-shadow:_0px_4px_0px_rgb(0_0_0_/_0.50)]">Exceptional</div>
+            <div class="w-20 h-[45px] left-[145px] top-[54px] absolute text-center text-white text-lg font-bold font-['Albert Sans']">[3.5%]</div>
+          </div>
+          <div class="w-[370px] h-[104px] left-[15px] top-[712px] absolute">
+            <div class="w-[370px] h-[82px] left-0 top-[22px] absolute bg-[#b38d8d] rounded-[5px]"></div>
+            <div class="w-[370px] h-[82px] left-0 top-0 absolute text-center text-[#d6c1c1] text-3xl font-bold font-['Albert Sans'] [text-shadow:_0px_4px_0px_rgb(0_0_0_/_0.50)]">Sacred</div>
+            <div class="w-20 h-[45px] left-[145px] top-[54px] absolute text-center text-white text-lg font-bold font-['Albert Sans']">[1%]</div>
+          </div>
+          <div class="w-[370px] h-[104px] left-[15px] top-[798px] absolute">
+            <img class="w-[370px] h-[82px] left-0 top-[22px] absolute rounded-[5px]" src="https://placehold.co/370x82" />
+            <div class="w-[370px] h-[82px] left-0 top-0 absolute text-center text-[#020202] text-3xl font-bold font-['Albert Sans'] [text-shadow:_0px_4px_0px_rgb(0_0_0_/_0.50)]">Null</div>
+            <div class="w-20 h-[45px] left-[145px] top-[54px] absolute text-center text-black text-lg font-bold font-['Albert Sans']">[0.4%]</div>
+          </div>
+          <div class="w-[370px] h-[104px] left-[15px] top-[884px] absolute">
+            <img class="w-[370px] h-[82px] left-0 top-[22px] absolute rounded-[5px]" src="https://placehold.co/370x82" />
+            <div class="w-[370px] h-[82px] left-0 top-0 absolute text-center text-white text-3xl font-bold font-['Albert Sans'] [text-shadow:_0px_4px_0px_rgb(0_0_0_/_0.50)]">Anomaly</div>
+            <div class="w-20 h-[45px] left-[145px] top-[54px] absolute text-center text-white text-lg font-bold font-['Albert Sans']">[0.1%]</div>
+          </div>
+        </div>
+        <div class="w-[370px] h-[150px] left-[775px] top-[615px] absolute">
+          <div class="w-[370px] h-[150px] left-0 top-0 absolute bg-[#1dd81d] rounded-[29px]"></div>
+          <div class="w-[369px] h-[150px] left-[1px] top-0 absolute text-center text-white text-[50px] font-bold font-['Albert Sans']">Roll</div>
+        </div>
+        <div class="w-[154px] h-[100px] left-[875px] top-[405px] absolute bg-[#1bbc59]"></div>
+        <div class="w-[91px] h-[100px] left-[1029px] top-[405px] absolute bg-[#205fbe]"></div>
+        <div class="w-[63px] h-[100px] left-[1120px] top-[405px] absolute bg-[#7720c3]"></div>
+        <div class="w-14 h-[100px] left-[1183px] top-[405px] absolute bg-[#d58910]"></div>
+        <div class="w-[35px] h-[100px] left-[1239px] top-[405px] absolute bg-[#b91919]"></div>
+        <div class="w-[24.50px] h-[100px] left-[1274px] top-[405px] absolute bg-[#514130]"></div>
+        <div class="w-[7px] h-[100px] left-[1299px] top-[405px] absolute bg-[#b48d8d]"></div>
+        <div class="w-[2.80px] h-[100px] left-[1306px] top-[405px] absolute bg-[#eaeaea]"></div>
+        <div class="w-[0.70px] h-[100px] left-[1309px] top-[405px] absolute bg-black"></div>
+        <div class="w-[7px] h-[135px] left-[610px] top-[387px] absolute bg-[#929292]"></div>
+      </div>
+    
+</body>
+</html>

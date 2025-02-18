@@ -1,0 +1,129 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    width: auto; height: auto;
+    overflow: hidden;
+}
+
+.bg{
+    background-image: url(viewport.jpg);
+    background-repeat: no-repeat;
+}
+
+.null{
+    background-image: url(null.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 0px -72px;
+}
+
+.anomaly{
+    background-image: url(anomaly.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 0px -65px;
+}
+
+.ck{
+    cursor: pointer;
+}
+
+.cn{
+    cursor: default;
+}
+
+#divider{
+    position: absolute;
+    left: 618px;
+    opacity: 1;
+
+    animation-name: load-in, fadeIn;
+    animation-duration: 3.25s, 1.25s;
+    animation-delay: 0s, 2s;
+}
+
+@keyframes logoSplash{
+    0%{
+        opacity: 1;
+        transform: scale(1);
+    }
+    90%{
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    100%{
+        transform: scale(0);
+    }
+}
+
+#logo{
+    opacity: 0;
+    animation: logoSplash 2.2s ease-in-out;
+}
+
+@keyframes midSplash{
+    0%{
+        opacity: 0;
+    }
+    99.999%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+
+#logo2{
+    animation-name: midSplash, fadeInDown;
+    animation-duration: 2s, 1.25s;
+    animation-delay: 0s, 2s;
+}
+
+@keyframes load-in{
+    0%{
+        opacity: 0;
+    }
+    61.5384%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+
+#toolbar{
+    animation-name: load-in, fadeInRight;
+    animation-duration: 3.25s, 1.25s;
+    animation-delay: 0s, 2s;
+}
+
+#load-in{
+    animation-name: load-in, fadeIn;
+    animation-duration: 3.25s, 1.25s;
+    animation-delay: 0s, 2s;
+}
+
+@keyframes idle{
+    0%{
+        
+    }
+    100%{
+
+    }
+}
+
+@keyframes bdrop{
+    0%{
+        transform: scale(1);
+    }
+    50%{
+        transform: scale(1.1);
+    }
+    100%{
+        transform: scale(1);
+    }
+}
